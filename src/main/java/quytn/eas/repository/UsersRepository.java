@@ -11,6 +11,6 @@ import quytn.eas.entity.Users;
  */
 @SuppressWarnings("unused")
 @Repository
-public interface UsersRepository extends JpaRepository<Users, Long>, JpaSpecificationExecutor<Users> {
+public interface UsersRepository extends JpaRepository<Users, Long> {
 
 }

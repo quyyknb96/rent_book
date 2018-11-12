@@ -11,6 +11,6 @@ import quytn.eas.entity.BookStore;
  */
 @SuppressWarnings("unused")
 @Repository
-public interface BookStoreRepository extends JpaRepository<BookStore, Long>, JpaSpecificationExecutor<BookStore> {
+public interface BookStoreRepository extends JpaRepository<BookStore, Long> {
 
 }

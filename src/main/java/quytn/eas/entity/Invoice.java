@@ -3,7 +3,6 @@ package quytn.eas.entity;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.hibernate.annotations.Cache;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
-import org.springframework.data.elasticsearch.annotations.Document;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -18,7 +17,6 @@ import java.util.Set;
 @Entity
 @Table(name = "invoice")
 @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
-@Document(indexName = "invoice")
 public class Invoice implements Serializable {
 
     private static final long serialVersionUID = 1L;

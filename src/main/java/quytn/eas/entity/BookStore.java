@@ -2,7 +2,6 @@ package quytn.eas.entity;
 
 import org.hibernate.annotations.Cache;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
-import org.springframework.data.elasticsearch.annotations.Document;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -16,7 +15,6 @@ import java.util.Set;
 @Entity
 @Table(name = "book_store")
 @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
-@Document(indexName = "bookstore")
 public class BookStore implements Serializable {
 
     private static final long serialVersionUID = 1L;

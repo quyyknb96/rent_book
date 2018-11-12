@@ -11,6 +11,6 @@ import quytn.eas.entity.Invoice;
  */
 @SuppressWarnings("unused")
 @Repository
-public interface InvoiceRepository extends JpaRepository<Invoice, Long>, JpaSpecificationExecutor<Invoice> {
+public interface InvoiceRepository extends JpaRepository<Invoice, Long> {
 
 }

@@ -11,6 +11,6 @@ import quytn.eas.entity.Details;
  */
 @SuppressWarnings("unused")
 @Repository
-public interface DetailsRepository extends JpaRepository<Details, Long>, JpaSpecificationExecutor<Details> {
+public interface DetailsRepository extends JpaRepository<Details, Long> {
 
 }

@@ -11,6 +11,6 @@ import quytn.eas.entity.Rent;
  */
 @SuppressWarnings("unused")
 @Repository
-public interface RentRepository extends JpaRepository<Rent, Long>, JpaSpecificationExecutor<Rent> {
+public interface RentRepository extends JpaRepository<Rent, Long> {
 
 }

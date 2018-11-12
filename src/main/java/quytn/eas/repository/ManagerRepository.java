@@ -11,6 +11,6 @@ import quytn.eas.entity.Manager;
  */
 @SuppressWarnings("unused")
 @Repository
-public interface ManagerRepository extends JpaRepository<Manager, Long>, JpaSpecificationExecutor<Manager> {
+public interface ManagerRepository extends JpaRepository<Manager, Long> {
 
 }
