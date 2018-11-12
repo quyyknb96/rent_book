@@ -33,10 +33,6 @@ public class Invoice implements Serializable {
 
     @ManyToOne
     @JsonIgnoreProperties("invoices")
-    private PurchaseOrder purchaseOrder;
-
-    @ManyToOne
-    @JsonIgnoreProperties("invoices")
     private Manager manager;
 
     @OneToMany(mappedBy = "invoice")
@@ -63,19 +59,6 @@ public class Invoice implements Serializable {
 
     public void setInvoiceDate(LocalDate invoiceDate) {
         this.invoiceDate = invoiceDate;
-    }
-
-    public PurchaseOrder getPurchaseOrder() {
-        return purchaseOrder;
-    }
-
-    public Invoice purchaseOrder(PurchaseOrder purchaseOrder) {
-        this.purchaseOrder = purchaseOrder;
-        return this;
-    }
-
-    public void setPurchaseOrder(PurchaseOrder purchaseOrder) {
-        this.purchaseOrder = purchaseOrder;
     }
 
     public Manager getManager() {
