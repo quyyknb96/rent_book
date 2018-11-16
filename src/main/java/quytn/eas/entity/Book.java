@@ -41,7 +41,7 @@ public class Book implements Serializable {
     private Integer quantity;
 
     @Column(name = "price")
-    private Integer price;
+    private Float price;
 
     @ManyToOne
     @JsonIgnoreProperties("bookStores")
@@ -125,16 +125,16 @@ public class Book implements Serializable {
         this.quantity = quantity;
     }
 
-    public Integer getPrice() {
+    public Float getPrice() {
         return price;
     }
 
-    public Book price(Integer price) {
+    public Book price(Float price) {
         this.price = price;
         return this;
     }
 
-    public void setPrice(Integer price) {
+    public void setPrice(Float price) {
         this.price = price;
     }
 

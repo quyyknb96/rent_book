@@ -24,7 +24,7 @@ public class Details implements Serializable {
     private Long id;
 
     @Column(name = "penalty")
-    private Integer penalty;
+    private Float penalty;
 
     @ManyToOne
     @JsonIgnoreProperties("details")
@@ -47,16 +47,16 @@ public class Details implements Serializable {
         this.id = id;
     }
 
-    public Integer getPenalty() {
+    public Float getPenalty() {
         return penalty;
     }
 
-    public Details penalty(Integer penalty) {
+    public Details penalty(Float penalty) {
         this.penalty = penalty;
         return this;
     }
 
-    public void setPenalty(Integer penalty) {
+    public void setPenalty(Float penalty) {
         this.penalty = penalty;
     }
 

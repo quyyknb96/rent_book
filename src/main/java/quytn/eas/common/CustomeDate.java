@@ -5,6 +5,15 @@ public class CustomeDate {
     private int quarter;
     private int year;
 
+    public CustomeDate() {
+    }
+
+    public CustomeDate(int month, int quarter, int year) {
+        this.month = month;
+        this.quarter = quarter;
+        this.year = year;
+    }
+
     public int getMonth() {
         return month;
     }
