@@ -32,6 +32,8 @@ dependencies {
     implementation('org.springframework.boot:spring-boot-starter-data-jpa')
     implementation('org.springframework.boot:spring-boot-starter-web')
     runtimeOnly('org.postgresql:postgresql')
-    providedRuntime('org.springframework.boot:spring-boot-starter-tomcat')
+    compile group: 'org.apache.tomcat.embed', name: 'tomcat-embed-jasper', version: '9.0.10'
     testImplementation('org.springframework.boot:spring-boot-starter-test')
+    compile group: 'javax.servlet', name: 'jstl', version: '1.2'
+
 }
