@@ -11,6 +11,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Cinzel|Open+Sans+Condensed:300" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="/resource/css/style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1,shrink-to-fit=no">
@@ -23,13 +24,20 @@
 
     <div class="logo-right">
         <ul>
-            <li><a href="login.jsp"><img src="/resource/image/login.png">Đăng nhập</a></li>
-            <%--<li style="display: block;">--%>
-                <%--<span style="font-size: 15px; font-weight: 200;">Xin chào</span>--%>
-                <%--<a style="margin-right: 25px;margin-left: 15px; font-size: 20px; display: inline-block" href="user_detail.jsp">--%>
-                <%--</a>--%>
-                <%--<a style="display: inline-block" href="logout.jsp">Thoát</a>--%>
-            <%--</li>--%>
+            <c:choose>
+                <c:when test="${sessionScope.get('userLogin') != null}">
+                    <li style="display: block;">
+                        <span style="font-size: 15px; font-weight: 200;">Xin chào</span>
+                        <a style="margin-right: 25px;margin-left: 15px; font-size: 20px; display: inline-block" href="#">
+                            ${userLogin.users.name}
+                        </a>
+                        <a style="display: inline-block" href="/logout">Thoát</a>
+                    </li>
+                </c:when>
+                <c:otherwise>
+                    <li><a href="/login"><img src="/resource/image/login.png">Đăng nhập</a></li>
+                </c:otherwise>
+            </c:choose>
         </ul>
     </div>
 </header>
@@ -38,8 +46,17 @@
     <div class="menu">
         <ul>
             <li><a href="/home">Trang chủ</a></li>
-            <li>|</li>
-            <li><a href="news.jsp">Thống kê</a></li>
+            <c:if test="${sessionScope.get('userLogin') != null && userLogin.username == 'admin'}">
+                <li>|</li>
+                <li>
+                    <a href="/">Thống kê</a>
+                    <ul class="statHover">
+                        <li><a href="#">Theo tháng</a></li>
+                        <li><a href="#">Theo quý</a></li>
+                        <li><a href="#">Theo năm</a></li>
+                    </ul>
+                </li>
+            </c:if>
         </ul>
     </div>
 </body>

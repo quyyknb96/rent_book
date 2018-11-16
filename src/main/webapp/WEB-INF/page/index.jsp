@@ -11,7 +11,7 @@
 
 <html>
 <head>
-    <title>Welcome</title>
+    <title>Trang chủ</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>

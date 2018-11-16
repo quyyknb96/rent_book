@@ -5,6 +5,8 @@ import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 import org.springframework.stereotype.Repository;
 import quytn.eas.entity.Manager;
 
+import java.util.Optional;
+
 
 /**
  * Spring Data  repository for the Manager entity.
@@ -12,5 +14,5 @@ import quytn.eas.entity.Manager;
 @SuppressWarnings("unused")
 @Repository
 public interface ManagerRepository extends JpaRepository<Manager, Long> {
-
+    Optional<Manager> findByUsernameAndPassword(String username, String password);
 }

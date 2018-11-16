@@ -6,6 +6,7 @@ import org.hibernate.annotations.CacheConcurrencyStrategy;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.sql.Time;
 import java.time.LocalDate;
 import java.util.HashSet;
 import java.util.Objects;
@@ -36,6 +37,21 @@ public class Invoice implements Serializable {
     @OneToMany(mappedBy = "invoice")
     @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
     private Set<Details> details = new HashSet<>();
+
+    @Column(name = "invoice_time")
+    private Time invoiceTime;
+
+    public Invoice(Time invoiceTime) {
+        this.invoiceTime = invoiceTime;
+    }
+
+    public Time getInvoiceTime() {
+        return invoiceTime;
+    }
+
+    public void setInvoiceTime(Time invoiceTime) {
+        this.invoiceTime = invoiceTime;
+    }
 
     // jhipster-needle-entity-add-field - JHipster will add fields here, do not remove
     public Long getId() {

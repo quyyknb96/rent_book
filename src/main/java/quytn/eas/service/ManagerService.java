@@ -78,4 +78,8 @@ public class ManagerService {
             log.debug("ID not exits to delete Manager : {}", id);
         }
     }
+
+    public Optional<Manager> checkLogin(Manager manager){
+        return managerRepository.findByUsernameAndPassword(manager.getUsername(), manager.getPassword());
+    }
 }
