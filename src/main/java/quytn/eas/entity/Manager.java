@@ -39,6 +39,10 @@ public class Manager implements Serializable {
     private Set<Invoice> invoices = new HashSet<>();
 
     // jhipster-needle-entity-add-field - JHipster will add fields here, do not remove
+
+    public Manager() {
+    }
+
     public Long getId() {
         return id;
     }

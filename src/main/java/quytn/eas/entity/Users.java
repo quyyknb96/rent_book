@@ -50,6 +50,10 @@ public class Users implements Serializable {
     private Set<Rent> rents = new HashSet<>();
 
     // jhipster-needle-entity-add-field - JHipster will add fields here, do not remove
+
+    public Users() {
+    }
+
     public Long getId() {
         return id;
     }

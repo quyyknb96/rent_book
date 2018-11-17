@@ -41,6 +41,27 @@ public class Invoice implements Serializable {
     @Column(name = "invoice_time")
     private Time invoiceTime;
 
+    @Column(name = "jhi_status")
+    private String status;
+
+    // jhipster-needle-entity-add-field - JHipster will add fields here, do not remove
+
+
+    public Invoice() {
+    }
+
+    public Invoice(String status) {
+        this.status = status;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
     public Invoice(Time invoiceTime) {
         this.invoiceTime = invoiceTime;
     }
@@ -52,8 +73,6 @@ public class Invoice implements Serializable {
     public void setInvoiceTime(Time invoiceTime) {
         this.invoiceTime = invoiceTime;
     }
-
-    // jhipster-needle-entity-add-field - JHipster will add fields here, do not remove
     public Long getId() {
         return id;
     }

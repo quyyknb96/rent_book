@@ -52,6 +52,10 @@ public class Book implements Serializable {
     private Set<Details> details = new HashSet<>();
 
     // jhipster-needle-entity-add-field - JHipster will add fields here, do not remove
+
+    public Book() {
+    }
+
     public Long getId() {
         return id;
     }
