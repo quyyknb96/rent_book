@@ -1,5 +1,9 @@
 package quytn.eas.common;
 
-public class Constant {
-    private final CustomeDate START_DATE = new CustomeDate(1,1,2018);
+public final class Constant {
+    public static final CustomeDate START_DATE = new CustomeDate(1,1,2018);
+
+    private Constant(){
+
+    }
 }

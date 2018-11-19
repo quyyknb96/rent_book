@@ -5,6 +5,9 @@ import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 import org.springframework.stereotype.Repository;
 import quytn.eas.entity.Invoice;
 
+import java.time.LocalDate;
+import java.util.List;
+
 
 /**
  * Spring Data  repository for the Invoice entity.
@@ -12,5 +15,5 @@ import quytn.eas.entity.Invoice;
 @SuppressWarnings("unused")
 @Repository
 public interface InvoiceRepository extends JpaRepository<Invoice, Long> {
-
+    List<Invoice> findByInvoiceDateIsGreaterThanEqualAndInvoiceDateLessThanEqual(LocalDate begin, LocalDate end);
 }

@@ -3,31 +3,31 @@ package quytn.eas.common;
 import java.time.LocalDate;
 import java.time.YearMonth;
 
-public class DateUtil {
+public final class DateUtil {
 
-    public static CustomeDate prevMonth(CustomeDate customeDate) {
-        if (customeDate.getMonth() == 1) {
-            customeDate.setMonth(12);
-            customeDate.setYear(customeDate.getYear() - 1);
-        } else {
-            customeDate.setMonth(customeDate.getMonth() - 1);
+    public static CustomeDate prevMonth(String category, CustomeDate customeDate) {
+        switch (category) {
+            case "month":
+                if (customeDate.getMonth() == 1) {
+                    customeDate.setMonth(12);
+                    customeDate.setYear(customeDate.getYear() - 1);
+                } else {
+                    customeDate.setMonth(customeDate.getMonth() - 1);
+                }
+                break;
+            case "quarter":
+                if (customeDate.getQuarter() == 1) {
+                    customeDate.setQuarter(4);
+                    customeDate.setYear(customeDate.getYear() - 1);
+                } else {
+                    customeDate.setQuarter(customeDate.getQuarter() - 1);
+                }
+                break;
+            case "year":
+                customeDate.setYear(customeDate.getYear() - 1);
+                break;
         }
-        return customeDate;
-    }
-
-    public static CustomeDate prevQuarter(CustomeDate customeDate) {
-        if (customeDate.getQuarter() == 1) {
-            customeDate.setQuarter(4);
-            customeDate.setYear(customeDate.getYear() - 1);
-        } else {
-            customeDate.setQuarter(customeDate.getQuarter() - 1);
-        }
-        return customeDate;
-    }
-
-    public static CustomeDate prevYear(CustomeDate customeDate) {
-        customeDate.setYear(customeDate.getYear() - 1);
-        return customeDate;
+        return new CustomeDate(customeDate.getMonth(), customeDate.getQuarter(), customeDate.getYear());
     }
 
     public static boolean isBefore(CustomeDate target, CustomeDate source) {
@@ -86,5 +86,14 @@ public class DateUtil {
                 break;
         }
         return localDate;
+    }
+
+    public static int getDayNumberBetween(LocalDate begin, LocalDate end){
+        int result = 1;
+        while (!begin.isEqual(end)){
+            begin = begin.plusDays(1);
+            result++;
+        }
+        return result;
     }
 }

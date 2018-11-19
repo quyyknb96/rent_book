@@ -9,6 +9,13 @@ public class Stat {
     public Stat() {
     }
 
+    public Stat(String category, CustomeDate customeDate, String label, Float totalCost) {
+        this.category = category;
+        this.customeDate = customeDate;
+        this.label = label;
+        this.totalCost = totalCost;
+    }
+
     public String getCategory() {
         return category;
     }
