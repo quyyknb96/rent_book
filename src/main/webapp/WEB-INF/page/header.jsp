@@ -49,11 +49,11 @@
             <c:if test="${sessionScope.get('userLogin') != null && userLogin.username == 'admin'}">
                 <li>|</li>
                 <li>
-                    <a href="/">Thống kê</a>
+                    <a href="#">Thống kê</a>
                     <ul class="statHover">
-                        <li><a href="#">Theo tháng</a></li>
-                        <li><a href="#">Theo quý</a></li>
-                        <li><a href="#">Theo năm</a></li>
+                        <li><a href="/stat/month">Theo tháng</a></li>
+                        <li><a href="/stat/quarter">Theo quý</a></li>
+                        <li><a href="/stat/year">Theo năm</a></li>
                     </ul>
                 </li>
             </c:if>

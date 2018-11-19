@@ -30,8 +30,8 @@ public class StatService {
                 break;
         }
         stat.setTotalCost(getTotalCostStat(stat));
-        //CustomeDate date = new CustomeDate(stat.getCustomeDate().getMonth(), stat.getCustomeDate().getQuarter(), stat.getCustomeDate().getYear());
-        //stat.setCustomeDate(date);
+        CustomeDate date = new CustomeDate(stat.getCustomeDate().getMonth(), stat.getCustomeDate().getQuarter(), stat.getCustomeDate().getYear());
+        stat.setCustomeDate(date);
         return stat;
     }
 
@@ -41,7 +41,7 @@ public class StatService {
         float result = 0;
         for ( Details details : detailsRepository.findByInvoiceInvoiceDateIsGreaterThanEqualAndInvoiceInvoiceDateLessThanEqual(begin, end)) {
             int dayNumber = DateUtil.getDayNumberBetween(details.getRent().getRentDate(), details.getInvoice().getInvoiceDate());
-            result = dayNumber * details.getBook().getPrice();
+            result += dayNumber * details.getBook().getPrice() + details.getPenalty();
         }
         return result;
     }

@@ -33,20 +33,20 @@
         <div class="footer_right">
             <h4>Phương thức thanh toán</h4>
             <div class="payment">
-                <span><img src="resource/image/visa.png"></span>
-                <span><img src="resource/image/jcb.png"></span>
-                <span><img src="resource/image/mastercard.png"></span>
-                <span><img src="resource/image/tienmat.png"></span>
-                <span><img src="resource/image/internetbanking.png"></span>
-                <span><img src="resource/image/tragop.png"></span>
+                <span><img src="/resource/image/visa.png"></span>
+                <span><img src="/resource/image/jcb.png"></span>
+                <span><img src="/resource/image/mastercard.png"></span>
+                <span><img src="/resource/image/tienmat.png"></span>
+                <span><img src="/resource/image/internetbanking.png"></span>
+                <span><img src="/resource/image/tragop.png"></span>
             </div>
         </div>
         <div class="footer_nav">
             <h4>Kết nối với chúng tôi</h4>
             <div class="connect">
-                <a rel="" href="https://facebook.com" target="_blank" title="Facebook"><img src="resource/image/facebook.png" alt="facebook"></a>
-                <a rel="" href="https://twitter.com" target="_blank" title="Twitter"><img src="resource/image/twitter.png" alt="twitter"></a>
-                <a rel="" href="https://youtube.com" target="_blank" title="Youtube"><img src="resource/image/youtube.png" alt="youtube"></a>
+                <a rel="" href="https://facebook.com" target="_blank" title="Facebook"><img src="/resource/image/facebook.png" alt="facebook"></a>
+                <a rel="" href="https://twitter.com" target="_blank" title="Twitter"><img src="/resource/image/twitter.png" alt="twitter"></a>
+                <a rel="" href="https://youtube.com" target="_blank" title="Youtube"><img src="/resource/image/youtube.png" alt="youtube"></a>
             </div>
         </div>
     </footer>

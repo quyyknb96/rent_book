@@ -27,7 +27,7 @@ public final class DateUtil {
                 customeDate.setYear(customeDate.getYear() - 1);
                 break;
         }
-        return new CustomeDate(customeDate.getMonth(), customeDate.getQuarter(), customeDate.getYear());
+        return customeDate;
     }
 
     public static boolean isBefore(CustomeDate target, CustomeDate source) {
@@ -58,11 +58,11 @@ public final class DateUtil {
                 localDate = localDate.withDayOfMonth(1).withMonth(customeDate.getMonth()).withYear(customeDate.getYear());
                 break;
             case "quarter":
-                YearMonth yearMonth = YearMonth.of(customeDate.getYear(), customeDate.getMonth());
+                YearMonth yearMonth = YearMonth.of(customeDate.getYear(), (customeDate.getQuarter() - 1) * 3 + 1);
                 localDate = localDate.withDayOfMonth(1).withMonth(yearMonth.getMonth().firstMonthOfQuarter().getValue()).withYear(customeDate.getYear());
                 break;
             case "year":
-                localDate = localDate.withYear(customeDate.getYear()).withMonth(customeDate.getMonth()).withDayOfMonth(1);
+                localDate = localDate.withYear(customeDate.getYear()).withMonth(1).withDayOfMonth(1);
                 break;
         }
         return localDate;
@@ -77,7 +77,7 @@ public final class DateUtil {
                 localDate = localDate.withDayOfMonth(yearMonth.lengthOfMonth());
                 break;
             case "quarter":
-                YearMonth yearMonth1 = YearMonth.of(customeDate.getYear(), customeDate.getMonth());
+                YearMonth yearMonth1 = YearMonth.of(customeDate.getYear(), customeDate.getQuarter() * 3);
                 int lastMonthInQuarter = yearMonth1.getMonth().firstMonthOfQuarter().getValue() + 2;
                 localDate = localDate.withYear(customeDate.getYear()).withMonth(lastMonthInQuarter).withDayOfMonth(YearMonth.of(customeDate.getYear(), lastMonthInQuarter).lengthOfMonth());
                 break;
