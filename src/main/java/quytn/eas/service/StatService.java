@@ -8,8 +8,11 @@ import quytn.eas.common.Stat;
 import quytn.eas.entity.Details;
 import quytn.eas.repository.DetailsRepository;
 
+import javax.validation.constraints.Null;
 import java.time.LocalDate;
 import java.util.List;
+
+import static java.sql.Types.NULL;
 
 @Service
 public class StatService {
@@ -41,8 +44,16 @@ public class StatService {
         float result = 0;
         for ( Details details : detailsRepository.findByInvoiceInvoiceDateIsGreaterThanEqualAndInvoiceInvoiceDateLessThanEqual(begin, end)) {
             int dayNumber = DateUtil.getDayNumberBetween(details.getRent().getRentDate(), details.getInvoice().getInvoiceDate());
-            result += dayNumber * details.getBook().getPrice() + details.getPenalty();
+            result += dayNumber * details.getBook().getPrice() + isFloatNull(details.getPenalty());
         }
         return result;
+    }
+
+    public static float isFloatNull(Float aFloat){
+        if (aFloat != null) {
+            return aFloat;
+        } else {
+            return 0;
+        }
     }
 }

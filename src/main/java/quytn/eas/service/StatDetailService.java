@@ -45,7 +45,7 @@ public class StatDetailService {
             float result = 0;
             for ( Details details : detailsRepository.findByInvoiceId(invoice.getId())) {
                 int dayNumber = DateUtil.getDayNumberBetween(details.getRent().getRentDate(), details.getInvoice().getInvoiceDate());
-                result += dayNumber * details.getBook().getPrice() + details.getPenalty();
+                result += dayNumber * details.getBook().getPrice() + StatService.isFloatNull(details.getPenalty());
                 statDetail.setUserName(details.getRent().getUsers().getName());
                 statDetail.setRentTotal(statDetail.getRentTotal() + 1);
             }
