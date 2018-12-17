@@ -36,12 +36,13 @@
                     <tbody>
                         <c:forEach var="detail" items="${detailList}" varStatus="loop">
                                 <fmt:formatDate value="${detail.invoiceDate}" var="dateFormat" pattern="dd-MM-yyyy HH:mm:ss" />
+                                <fmt:formatNumber value="${detail.costTotal}" var="costTotal" maxFractionDigits="2" minFractionDigits="2" />
                                 <tr>
                                     <th scope="row"><span>${loop.index + 1}</span></th>
                                     <td><span>${detail.userName}</span></td>
                                     <td><span>${dateFormat}</span></td>
                                     <td><span>${detail.rentTotal}</span></td>
-                                    <td><span>${detail.costTotal}</span></td>
+                                    <td><span>${costTotal}</span></td>
                                 </tr>
                         </c:forEach>
                     </tbody>
