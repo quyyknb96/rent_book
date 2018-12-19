@@ -8,11 +8,7 @@ import quytn.eas.common.Stat;
 import quytn.eas.entity.Details;
 import quytn.eas.repository.DetailsRepository;
 
-import javax.validation.constraints.Null;
 import java.time.LocalDate;
-import java.util.List;
-
-import static java.sql.Types.NULL;
 
 @Service
 public class StatService {

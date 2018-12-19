@@ -36,6 +36,17 @@ public class StatController {
             statList.add(stat);
             date = DateUtil.prevMonth(stat.getCategory(), date);
         }
+
+//        CustomeDate customeDate = new CustomeDate(Constant.START_DATE.getMonth(), Constant.START_DATE.getQuarter(), Constant.START_DATE.getYear());
+//        date = DateUtil.getCustomeDateByLocalDate(LocalDate.now());
+//        while (!DateUtil.isBefore(date, customeDate)){
+//            Stat stat = new Stat();
+//            stat.setCategory(category);
+//            stat.setCustomeDate(customeDate);
+//            stat = statService.getStatByStatProperty(stat);
+//            statList.add(stat);
+//            customeDate = DateUtil.NextMonth(stat.getCategory(), customeDate);
+//        }
         model.addAttribute("statList", statList);
         return "statistic";
     }

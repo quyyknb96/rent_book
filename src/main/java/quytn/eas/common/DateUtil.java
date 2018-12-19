@@ -30,6 +30,32 @@ public final class DateUtil {
         return customeDate;
     }
 
+
+    public static CustomeDate NextMonth(String category, CustomeDate customeDate) {
+        switch (category) {
+            case "month":
+                if (customeDate.getMonth() == 12) {
+                    customeDate.setMonth(1);
+                    customeDate.setYear(customeDate.getYear() + 1);
+                } else {
+                    customeDate.setMonth(customeDate.getMonth() + 1);
+                }
+                break;
+            case "quarter":
+                if (customeDate.getQuarter() == 4) {
+                    customeDate.setQuarter(1);
+                    customeDate.setYear(customeDate.getYear() + 1);
+                } else {
+                    customeDate.setQuarter(customeDate.getQuarter() + 1);
+                }
+                break;
+            case "year":
+                customeDate.setYear(customeDate.getYear() + 1);
+                break;
+        }
+        return customeDate;
+    }
+
     public static boolean isBefore(CustomeDate target, CustomeDate source) {
         if (target.getYear() < source.getYear()) {
             return true;
